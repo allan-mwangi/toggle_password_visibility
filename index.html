@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Toggle Password Visibility</title>
+<style type="text/css">
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* vh stands for viewport height */
+}
+
+form {
+  width: 60%; /* adjust this value to control the form's width */
+}
+</style>
+<script>
+function togglePasswordVisibility() {
+  var x = document.getElementById("user_password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+</head>
+<body>
+<div class="form-container">
+<form>
+<table border=0><caption>User Login</caption>
+<tr><td>User Name</td><td><input name = "user_name" class="input" type = "text" id = "user_name"  autofocus value="" ></td></tr>
+<tr><td>Password</td><td><input name = "user_password" class="input" type = "password" id = "user_password"  value=""></td></tr>
+<tr><td></td><td><input type="checkbox" onclick="togglePasswordVisibility()"> Show Password</td></tr>
+<tr><td></td><td><input type=submit value=Login>&nbsp;&nbsp;&nbsp;&nbsp;<input type=reset value=Cancel></td></tr>
+</table>
+</div>
+</body>
+</html>
